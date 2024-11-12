@@ -3,22 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <title>reservation des tickets</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">    <title>reservation des tickets</title>
     <link rel="stylesheet" href="style.css">
+     
 </head>
-<body>
+<body >
+
     <div class="partie-haut">
         <div class="titre">
             <img src="./images/logo ticket.png" alt="logo">
             <h1>Reservation des tickets</h1>
         </div>
-        <div class="etapes">
-            <div>
-                <img src="./images/client.png" alt="profil">
-                <p>Informations personnelles</p>
-            </div>  
-            <div>
+        <div class="etapes ">
+            <div id="active">
                 <img src="./images/avion.png" alt="trajet">
                 <p>Trajet du voyage</p>
             </div> 
@@ -36,38 +33,25 @@
             </div>
         </div>
     </div>
-    <!-- informations personnelles -->
-    <section id="section" style="display: none;">
-        <p>Inserer vos donnees : </p>
-        <form class="Informations">
-            <input type="text" id="nom" placeholder="Entrer votre nom" required>
-            <input type="text" id="prenom" placeholder="Entrer votre prenom" required>
-            <input type="email" id="email" placeholder="Entrer votre email" required>
-        </form>
-        <div class="button">
-            <button id="suivant" type="button" class="btn btn-info">Suivant</button>
-        </div>
-    </section>
-
 
     <!-- trajet du voyage -->
-    <section id="section" style="display: none;">
+    <section id="section1" class="section" >
         <p>Choisir votre trajet : </p>
         <form class="choix-trajet">
             <div>
                 <label for="gareDepart">Gare de depart :</label>
                 <select>
                     <option>Marrakech</option>
-                    <option>Marrakech</option>
-                    <option>Marrakech</option>
+                    <option>Casablanca</option>
+                    <option>Agadir</option>
                 </select>
             </div>
             <div>
                 <label for="gareArrive">Gare d'arrive :</label>
                 <select>
                     <option>Marrakech</option>
-                    <option>Marrakech</option>
-                    <option>Marrakech</option>
+                    <option>Casablanca</option>
+                    <option>Agadir</option>
                 </select>
             </div>
             <div>
@@ -79,14 +63,15 @@
                 <input type="time" id="time" required>
             </div>
         </form>
-        <div class="button">
-            <button id="suivant" type="button" class="btn btn-info">Suivant</button>
+            <div class="button">
+                <button id="suivant1" type="button" class="btn btn-info" >Suivant</button>
+            </div>
         </div>
     </section>
 
 
     <!-- Resultats de recherche -->
-    <section id="section" style="display: grid; gap:20px; display: none;">
+    <section id="section2" class="section section-grid" style="display:none">
         <p>Les resultats de recherche : </p>
         <div class="result">
             <div class="depart">
@@ -103,7 +88,7 @@
                 <span style="color:#767575; font-size: large;">Marrakech</span>
             </div>
             <div class="selection">
-                <button id="selectionner" style="color:white; font-weight: bold;" type="button" class="btn btn-info">Selectionner</button>
+                <button id="selectionner1" style="color:white; font-weight: bold;" type="button" class="btn btn-info">Selectionner</button>
             </div>
         </div>
         <div class="result">
@@ -121,7 +106,7 @@
                 <span style="color:#767575; font-size: large;">Marrakech</span>
             </div>
             <div class="selection">
-                <button id="selectionner" style="color:white; font-weight: bold;" type="button" class="btn btn-info">Selectionner</button>
+                <button id="selectionner2" style="color:white; font-weight: bold;" type="button" class="btn btn-info">Selectionner</button>
             </div>
         </div>
         <div class="result">
@@ -139,48 +124,119 @@
                 <span style="color:#767575; font-size: large;">Marrakech</span>
             </div>
             <div class="selection">
-                <button id="selectionner" style="color:white; font-weight: bold;" type="button" class="btn btn-info">Selectionner</button>
+                <button id="selectionner3" style="color:white; font-weight: bold;" type="button" class="btn btn-info" >Selectionner</button>
+            </div>
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+            <div class="button">
+                <button id="precedent2" type="button" class="btn btn-info" >Précédent</button>
             </div>
         </div>
     </section>
 
     <!-- les voyageurs et leurs places -->
-    <section id="section">
+    <section id="section3" class="section" style="display:none">
         <p>Choisir les Passagers et les Places : </p>
         <div class="container">
             <div class="nbres-voyageurs">
                 <p style="font-size: 15px; color:#82818F; margin:0;">Nombre d'adultes (500dh): </p>
-                <div style="border: 1px solid black; display:inline-flex; padding:5px 10px; justify-content:space-around;gap:10px; border-radius: 10px; margin:0 20px">
-                    <span >-</span>
-                    <div style="width: 2px; background-color: #464545;"></div>
-                    <span>01</span>
-                    <div style="width: 2px; background-color: #464545;"></div>
-                    <span>+</span>
+                <button id="moins" style="border: 1px solid #b3b0b0;padding: 3px 10px;border-radius: 10px;background-color: #cee4e5">-</button>
+                <div style="border: 1px solid black; display:inline; padding:5px 10px; border-radius: 10px; margin:0 10px">
+                    <span id="nbr">00</span>
                 </div>
+                <button id="plus"  style="border: 1px solid #b3b0b0;padding: 3px 10px;border-radius: 10px;background-color: #cee4e5;">+</button>
             </div>
             <div class="nbres-voyageurs">
-                <p style="font-size: 15px; color:#82818F; margin:0;">Nombre d'adultes (500dh): </p>
-                <div style="border: 1px solid black; display:inline-flex; padding:5px 10px; justify-content:space-around;gap:10px; border-radius: 10px; margin:0 20px">
-                    <span >-</span>
-                    <div style="width: 2px; background-color: #464545;"></div>
-                    <span>01</span>
-                    <div style="width: 2px; background-color: #464545;"></div>
-                    <span>+</span>
+                <p style="font-size: 15px; color:#82818F; margin:0;">Nombre d'enfants (200dh): </p>
+                <button id="moins1" style="border: 1px solid #b3b0b0;padding: 3px 10px;border-radius: 10px;background-color: #cee4e5;">-</button>
+                <div style="border: 1px solid black; display:inline; padding:5px 10px; border-radius: 10px; margin:0 10px">
+                    <span id="nbr1">00</span>
                 </div>
+                <button id="plus1"style="border: 1px solid #b3b0b0;padding: 3px 10px;border-radius: 10px;background-color: #cee4e5;">+</button>
             </div>
         </div>
+
+        
+
+
         <div id="places">
-            <div class="check">1</div>
-            <div class="check">2</div>
-            <div class="check">3</div>
-            <div class="check">4</div>
-            <div class="check">5</div>
-            <div class="check">6</div>
-            <div class="check">7</div>
-            <div class="check">8</div>
+            <button class="place" >-</button>
+            <button class="place" >-</button>
+            <button class="place" >-</button>
+            <button class="place" >-</button>
+            <button class="place" >-</button>
+            <button class="place" >-</button>
+            <button class="place" >-</button>
+            <button class="place" >-</button>
+            <button class="place" >-</button>
+            <button class="place" >-</button>
+            <button class="place" >-</button>
+            <button class="place" >-</button>
+            <button class="place" >-</button>
+            <button class="place" >-</button>
+            <button class="place" >-</button>
+            <button class="place" >-</button>
         </div>
-        
-        
+       <div style="display: flex; justify-content: center; ">
+           <div id="total" style="padding:5px 10px;">Prix total: 0dh</div>
+       </div>
+      <div style="display: flex; justify-content: space-between;">
+            <div class="button">
+                <button id="precedent3" type="button" class="btn btn-info" >Précédent</button>
+            </div>
+            <div class="button">
+                <button id="suivant3" type="button" class="btn btn-info" >Suivant</button>
+            </div>
+        </div>
+    </section >
+
+    <section id="section4"  class="section" style="display:none">
+        <p>Inserer vos donnees : </p>
+            <form class="Informations"></form>
+            <div style="display: flex; justify-content: space-between;">
+                <div class="button">
+                    <button id="precedent4" type="button" class="btn btn-info" >Précédent</button>
+                </div>
+                <div class="button">
+                    <button id="suivant4" type="button" class="btn btn-info" >Suivant</button>
+                </div>
+            </div>
     </section>
+
+    <section id="section5"  class="section" style="display:none">
+        <p>Vos tickets : </p>
+        <div class="tickets"></div>
+        <div style="display: flex; justify-content: space-between;">
+            <div class="button">
+                <button id="precedent5" type="button" class="btn btn-info" >Précédent</button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- <div class="modal-dialog modal-xl" style="display: none;">
+        <section class="section">
+            <p>Inserer vos donnees : </p>
+            <form class="Informations">
+                <input type="text" id="nom" placeholder="Entrer votre nom" required>
+                <input type="text" id="prenom" placeholder="Entrer votre prenom" required>
+        /        <input type="email" id="email" placeholder="Entrer votre email" required>
+            </form>
+            <div class="button">
+                <button id="suivant" type="button" class="btn btn-info">Suivant</button>
+            </div>
+        </section>
+    </div> -->
+
+    
+
+
+    
+
+
+
+
+
+    <script src="main.js"></script>
 </body>
 </html>

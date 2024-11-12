@@ -1,3 +1,4 @@
+
 *{
     margin:0;
     padding:0;
@@ -29,19 +30,22 @@ body{
 
 .etapes{
     display:grid;
-    grid-template-columns: repeat(5,1fr);
+    grid-template-columns: repeat(4,1fr);
     gap: 40px;
     margin:1rem 5rem;
 }
 
+
+
 .etapes div{
     display:flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     border: 1px solid black;
     border-radius: 15px;
     background-color:#1DD6EE;
 }
+
 
 .etapes p{
     margin:5px;
@@ -61,7 +65,7 @@ body{
     margin: 0 50px;
 }
 
-#section{
+.section{
     background-color: white;
     padding:10px;
     margin:2rem 5rem;
@@ -69,7 +73,7 @@ body{
     border-radius: 20px;
 }
 
-#section p{
+.section p{
     padding: 5px 20px;
     font-size: large;
 }
@@ -79,7 +83,7 @@ body{
     justify-content: end;
     margin: 20px;
 }
-#suivant{
+.btn{
     color:white;
     font-weight: bold;
     margin-right:10px;
@@ -122,8 +126,13 @@ body{
     justify-content: space-around;
 }
 
+.section-grid{
+    display: grid;
+    gap: 20px;
+}
+
 #places{
-    padding:50px;
+    padding:50px 200px;
     display:grid;
     grid-template-columns: repeat(4,1fr);
     column-gap:28%;
@@ -132,14 +141,37 @@ body{
 
 }
 
-.check{
+.place{
     border:1px solid black;
     padding:5px 15px;
-
-    
-
-
+    border-radius: 10px;
+    background-color: #a6c5c6;
 }
+.place.selected {
+    background-color: rgb(124, 168, 124);  /* Couleur verte pour les places sélectionnées */
+}
+
+#total{
+    border:1px solid black;
+    width:150px;
+    border-radius: 10px;
+    grid-column: span 2/4;
+}
+
+#active{
+    background-color: #45c0d1;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
