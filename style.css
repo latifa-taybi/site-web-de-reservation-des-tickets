@@ -30,7 +30,7 @@ body{
 
 .etapes{
     display:grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(5,1fr);
     gap: 40px;
     margin:1rem 5rem;
 }
@@ -39,7 +39,7 @@ body{
 
 .etapes div{
     display:flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     border: 1px solid black;
     border-radius: 15px;
@@ -158,9 +158,22 @@ body{
     grid-column: span 2/4;
 }
 
-#active{
-    background-color: #45c0d1;
+.ticket{
+    margin: 0 10px;
+    border:1px solid black;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    padding: 10px;
 }
+
+
+
+.ticket p{
+    font-size: 14px;
+}
+
 
 
 
