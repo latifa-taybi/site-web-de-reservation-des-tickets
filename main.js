@@ -86,12 +86,6 @@ precedent5.addEventListener('click', ()=>{
 });
 
 
-
-
-
-
-
-
 const moins1 = document.getElementById("moins1");
 const nbr1 = document.getElementById("nbr1");
 const plus1 = document.getElementById("plus1");
@@ -104,7 +98,6 @@ const total = document.getElementById("total");
 const places = document.querySelectorAll('.place');
 
 
-
 let nbAdultes = 0; 
 let nbEnfants = 0;
 let counterPlaces = 0;  
@@ -114,6 +107,7 @@ function Total() {
     total.textContent = 'Prix total :' + prixTotal+ 'dh';
 }
 
+
 moins.addEventListener('click', function() {
     if (nbAdultes > 0) {
         nbAdultes--;
@@ -122,10 +116,10 @@ moins.addEventListener('click', function() {
         } else {
             nbr.textContent = nbAdultes;  
         }
-        // PLACES();
     }
     Total();
 });
+
 
 plus.addEventListener('click', function() {
     nbAdultes++;
@@ -134,7 +128,6 @@ plus.addEventListener('click', function() {
     } else {
         nbr.textContent = nbAdultes;  
     }
-    // PLACES();
     Total(); 
 });
 
@@ -146,7 +139,6 @@ moins1.addEventListener('click', function() {
         } else {
             nbr1.textContent = nbEnfants;  
         }    
-        // PLACES();  
     }       
     Total();
 });
@@ -158,7 +150,6 @@ plus1.addEventListener('click', function() {
     } else {
         nbr1.textContent = nbEnfants;  
     }
-    // PLACES();
     Total(); 
     
 });
@@ -267,7 +258,8 @@ date.setAttribute('min', todayFormatted);
 document.getElementById('Telecharger').addEventListener('click', function () {
     const element = document.getElementById('tickets');
     html2pdf(element, {
-        margin:5,
+        margin:10,
+        padding:10,
         filename:'document.pdf',
     });
 });
@@ -308,20 +300,3 @@ document.getElementById('Telecharger').addEventListener('click', function () {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
